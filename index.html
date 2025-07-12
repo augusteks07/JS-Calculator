@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora com HTML e JS</title>
+</head>
+<body>
+
+    <h1 id="h1"">Calculadora de Augusto ツ</h1>
+    
+    <div class="links">
+        
+        <a class="navbar github" href="https://github.com/augusteks07/" target="_blank"><img src="./pngs/github.png" alt="github"></a>
+        <a class="navbar instagram" href="https://instagram.com/augustooc7" target="_blank"><img src="./pngs/instagram.png" alt="instagram"></a>
+        <button onclick="changeMode()" class="navbar modechanger"><img src="./pngs/moon.png" id="changer"></button>
+
+    </div>
+
+    <main>
+
+        <input type="text" readonly id="input" placeholder=0>
+
+        <button onclick="addNumber('1')">1</button>
+        <button onclick="addNumber('2')">2</button>
+        <button onclick="addNumber('3')">3</button>
+        <button onclick="addNumber('+')">+</button>
+        <button onclick="addNumber('4')">4</button>
+        <button onclick="addNumber('5')">5</button>
+        <button onclick="addNumber('6')">6</button>
+        <button onclick="addNumber('-')">&minus;</button>
+        <button onclick="addNumber('7')">7</button>
+        <button onclick="addNumber('8')">8</button>
+        <button onclick="addNumber('9')">9</button>
+        <button onclick="addNumber('/')">/</button>
+        <button onclick="addNumber('0')">0</button>
+        <button onclick="Clear()" id="clear">C</button>
+        <button onclick="Calc()" id="equal">=</button>
+        <button onclick="addNumber('*')">X</button>
+
+    </main>
+
+</body>
+
+<script>
+
+    const input = document.getElementById('input')
+    const changer = document.getElementById('changer')
+    let contador = 0
+
+    function addNumber(valor) {
+        input.value += valor
+    }
+
+    function Clear() {
+        input.value = null
+    }
+
+    function Calc() {
+        if(input.value.includes('/0')) {
+            input.value = 'Não se divide por 0'
+        }
+
+        if(input.value == '') {
+            input.value = 'não há nada!'
+        }
+
+        else {
+            input.value = eval(input.value)
+        }
+    }
+
+    function changeMode() {
+
+        contador += 1
+
+        if(contador % 2 != 0) {
+
+            //dark mode
+
+            changer.src = './pngs/sun.png'
+
+            document.documentElement.style.setProperty('--letter', 'white');
+            document.documentElement.style.setProperty('--background', '#556270');
+            document.documentElement.style.setProperty('--calc-background', '#0a0a0a87');
+            document.documentElement.style.setProperty('--buttons', '1d1e20');
+            document.documentElement.style.setProperty('--hover', 'rgb(93, 96, 101)');
+            document.documentElement.style.setProperty('--neon', 'white');
+        } else {
+
+            //light mode
+
+            changer.src = './pngs/moon.png'
+        
+            document.documentElement.style.setProperty('--letter', 'black');
+            document.documentElement.style.setProperty('--background', 'white');
+            document.documentElement.style.setProperty('--calc-background', 'rgb(207, 229, 229)');
+            document.documentElement.style.setProperty('--buttons', 'rgb(230, 243, 248)');
+            document.documentElement.style.setProperty('--hover', '(white');
+            document.documentElement.style.setProperty('--neon', '#556270');
+        }
+
+    }
+
+</script>
+
+</html>

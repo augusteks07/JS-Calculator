@@ -1,0 +1,132 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--background);
+    font-family: roboto, sans-serif;
+    color: var(--letter);
+    transition: background-color 1s ease;
+    transition: color 1s ease;
+}
+
+:root {
+    --background: white;
+    --calc-background: rgb(207, 229, 229);
+    --buttons: rgb(230, 243, 248);
+    --letter: black;
+    --hover: white;
+    --neon: #556270;
+}
+
+#h1 {
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 60px;
+}
+
+main {
+    width: 220px;
+    height: 220px;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 60px;
+    background-color: var(--calc-background);
+    box-shadow: 0px 1px 20px var(--neon);
+    border-radius: 20px;
+    transition: background-color 1s ease;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.modechanger {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    height: 60px;
+    width: 50px;
+}
+
+.modechanger:hover {
+    background-color: transparent;
+}
+
+img {
+    width: 50px;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar::before {
+    content: "";
+    width: 0px;
+    border-radius: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: var(--neon);
+    bottom: -20px;
+    left: 0;
+    transition: 0.5s ease;
+}
+
+.navbar:hover::before {
+    width: 52px;
+}
+
+button {
+    width: 50px;
+    height: 40px;
+    margin: 1px;
+    border-radius: 10px;
+    border: 0.5px solid black;
+    cursor: pointer;
+    background-color: var(--buttons);
+    box-shadow: 0.5px 0.5px 5px rgba(0 ,0 , 0, 0.5);
+    font-size: 20px;
+    color: var(--letter);
+    transition: color 1s ease;    
+}
+
+button:hover {
+    background-color: var(--hover);
+}
+
+#clear {
+    background-color: #d12e11bd;
+    color: white;
+}
+
+#clear:hover {
+    background-color: #d12e11;
+}
+
+#equal {
+    background-color: #82ff0da2;
+}
+
+#equal:hover {
+    background-color: #82ff0d;
+}
+
+#input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 190px;
+    height: 22px;
+    background-color: #1c895487;
+    color: black;
+    font-size: 20px;
+}
+
+#input::placeholder {
+    color: black;
+}
