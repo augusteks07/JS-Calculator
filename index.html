@@ -21,7 +21,7 @@
     <main>
 
         <input type="text" readonly id="input" placeholder=0>
-
+        
         <button onclick="addNumber('1')">1</button>
         <button onclick="addNumber('2')">2</button>
         <button onclick="addNumber('3')">3</button>
@@ -87,6 +87,7 @@
             document.documentElement.style.setProperty('--buttons', '1d1e20');
             document.documentElement.style.setProperty('--hover', 'rgb(93, 96, 101)');
             document.documentElement.style.setProperty('--neon', 'white');
+            input.style.color = "white"
         } else {
 
             //light mode
@@ -99,6 +100,7 @@
             document.documentElement.style.setProperty('--buttons', 'rgb(230, 243, 248)');
             document.documentElement.style.setProperty('--hover', '(white');
             document.documentElement.style.setProperty('--neon', '#556270');
+            input.style.color = "black"
         }
 
     }
